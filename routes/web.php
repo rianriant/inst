@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\LikesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 
@@ -27,4 +28,6 @@ Route::patch('/profile/{user}', [App\Http\Controllers\ProfilesController::class,
 Route::post('/p', [PostsController::class, 'store']);
 
 Route::post('/follow/{user}', [FollowsController::class, 'store']);
+
+Route::post('/like/{post}', [LikesController::class, 'store']);
 
