@@ -18,9 +18,12 @@
                                 <span class="text-dark">{{ $post->user->name }}</span>
                             </a>
                             </div>
-                            <div class="pl-4">|</div>
+                            <div class="pl-2">|</div>
                             <div>
-                            <follow-button user-id="{{ $post->user->id }}" follows="{{ $follows }}"></follow-button>
+                                <follow-button user-id="{{ $post->user->id }}" follows="{{ $follows }}"></follow-button>
+                            </div>
+                            <div>
+                                <like-button post-id="{{ $post->id }}" likes="{{ $likes }}"></like-button>
                             </div>
                         </div>
                         

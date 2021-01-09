@@ -25,8 +25,8 @@ class PostsController extends Controller
     public function show(Post $post) {
         $profile = $post->user->profile;
         $follows = (auth()->user()) ? auth()->user()->following->contains($profile) : false;
-
-        return view('posts.show', compact('post', 'follows'));
+        $likes = (auth()->user()) ? auth()->user()->liked->contains($post) : false;
+        return view('posts.show', compact('post', 'follows', 'likes'));
     }
 
     public function store() {
